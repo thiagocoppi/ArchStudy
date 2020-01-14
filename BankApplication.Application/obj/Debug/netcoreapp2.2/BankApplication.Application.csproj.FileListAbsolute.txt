@@ -1,0 +1,8 @@
+C:\Estudo\BankApplication\BankApplication.Application\obj\Debug\netcoreapp2.2\BankApplication.Application.csprojAssemblyReference.cache
+C:\Estudo\BankApplication\BankApplication.Application\obj\Debug\netcoreapp2.2\BankApplication.Application.AssemblyInfoInputs.cache
+C:\Estudo\BankApplication\BankApplication.Application\obj\Debug\netcoreapp2.2\BankApplication.Application.AssemblyInfo.cs
+C:\Estudo\BankApplication\BankApplication.Application\bin\Debug\netcoreapp2.2\BankApplication.Application.deps.json
+C:\Estudo\BankApplication\BankApplication.Application\bin\Debug\netcoreapp2.2\BankApplication.Application.dll
+C:\Estudo\BankApplication\BankApplication.Application\bin\Debug\netcoreapp2.2\BankApplication.Application.pdb
+C:\Estudo\BankApplication\BankApplication.Application\obj\Debug\netcoreapp2.2\BankApplication.Application.dll
+C:\Estudo\BankApplication\BankApplication.Application\obj\Debug\netcoreapp2.2\BankApplication.Application.pdb

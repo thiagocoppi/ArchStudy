@@ -1,0 +1,13 @@
+C:\Estudo\BankApplication\BankApplication.Infraestrutura\bin\Debug\netcoreapp2.2\BankApplication.Infraestrutura.deps.json
+C:\Estudo\BankApplication\BankApplication.Infraestrutura\bin\Debug\netcoreapp2.2\BankApplication.Infraestrutura.runtimeconfig.json
+C:\Estudo\BankApplication\BankApplication.Infraestrutura\bin\Debug\netcoreapp2.2\BankApplication.Infraestrutura.runtimeconfig.dev.json
+C:\Estudo\BankApplication\BankApplication.Infraestrutura\bin\Debug\netcoreapp2.2\BankApplication.Infraestrutura.dll
+C:\Estudo\BankApplication\BankApplication.Infraestrutura\bin\Debug\netcoreapp2.2\BankApplication.Infraestrutura.pdb
+C:\Estudo\BankApplication\BankApplication.Infraestrutura\bin\Debug\netcoreapp2.2\BankApplication.Domain.dll
+C:\Estudo\BankApplication\BankApplication.Infraestrutura\bin\Debug\netcoreapp2.2\BankApplication.Domain.pdb
+C:\Estudo\BankApplication\BankApplication.Infraestrutura\obj\Debug\netcoreapp2.2\BankApplication.Infraestrutura.csprojAssemblyReference.cache
+C:\Estudo\BankApplication\BankApplication.Infraestrutura\obj\Debug\netcoreapp2.2\BankApplication.Infraestrutura.AssemblyInfoInputs.cache
+C:\Estudo\BankApplication\BankApplication.Infraestrutura\obj\Debug\netcoreapp2.2\BankApplication.Infraestrutura.AssemblyInfo.cs
+C:\Estudo\BankApplication\BankApplication.Infraestrutura\obj\Debug\netcoreapp2.2\BankApplication.Infraestrutura.csproj.CopyComplete
+C:\Estudo\BankApplication\BankApplication.Infraestrutura\obj\Debug\netcoreapp2.2\BankApplication.Infraestrutura.dll
+C:\Estudo\BankApplication\BankApplication.Infraestrutura\obj\Debug\netcoreapp2.2\BankApplication.Infraestrutura.pdb

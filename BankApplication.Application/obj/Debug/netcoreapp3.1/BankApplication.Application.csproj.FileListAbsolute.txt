@@ -1,0 +1,5 @@
+C:\Estudo\BankApplication\BankApplication.Application\bin\Debug\netcoreapp3.1\BankApplication.Application.deps.json
+C:\Estudo\BankApplication\BankApplication.Application\bin\Debug\netcoreapp3.1\BankApplication.Application.dll
+C:\Estudo\BankApplication\BankApplication.Application\obj\Debug\netcoreapp3.1\BankApplication.Application.csprojAssemblyReference.cache
+C:\Estudo\BankApplication\BankApplication.Application\obj\Debug\netcoreapp3.1\BankApplication.Application.AssemblyInfoInputs.cache
+C:\Estudo\BankApplication\BankApplication.Application\obj\Debug\netcoreapp3.1\BankApplication.Application.AssemblyInfo.cs

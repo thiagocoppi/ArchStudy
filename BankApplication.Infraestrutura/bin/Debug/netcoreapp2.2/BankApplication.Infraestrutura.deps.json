@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.2",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.2": {
+      "BankApplication.Infraestrutura/1.0.0": {
+        "dependencies": {
+          "BankApplication.Domain": "1.0.0"
+        },
+        "runtime": {
+          "BankApplication.Infraestrutura.dll": {}
+        }
+      },
+      "BankApplication.Domain/1.0.0": {
+        "runtime": {
+          "BankApplication.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BankApplication.Infraestrutura/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BankApplication.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

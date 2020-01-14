@@ -1,0 +1,5 @@
+C:\Estudo\BankApplication\BankApplication.Infraestrutura\bin\Debug\netcoreapp3.1\BankApplication.Infraestrutura.deps.json
+C:\Estudo\BankApplication\BankApplication.Infraestrutura\bin\Debug\netcoreapp3.1\BankApplication.Infraestrutura.dll
+C:\Estudo\BankApplication\BankApplication.Infraestrutura\obj\Debug\netcoreapp3.1\BankApplication.Infraestrutura.csprojAssemblyReference.cache
+C:\Estudo\BankApplication\BankApplication.Infraestrutura\obj\Debug\netcoreapp3.1\BankApplication.Infraestrutura.AssemblyInfoInputs.cache
+C:\Estudo\BankApplication\BankApplication.Infraestrutura\obj\Debug\netcoreapp3.1\BankApplication.Infraestrutura.AssemblyInfo.cs
