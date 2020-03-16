@@ -1,0 +1,4 @@
+/.vs/BankApplication/DesignTimeBuild/*.dtbcache
+/.vs/BankApplication/v16/*.suo
+/.vs/BankApplication/v16/Server/sqlite3/*.lock
+/.vs/BankApplication/v16/Server/sqlite3/*.ide
