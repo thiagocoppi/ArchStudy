@@ -1,8 +1,0 @@
-C:\Estudo\BankApplication\BankApplication.Domain\bin\Debug\netcoreapp2.2\BankApplication.Domain.deps.json
-C:\Estudo\BankApplication\BankApplication.Domain\bin\Debug\netcoreapp2.2\BankApplication.Domain.dll
-C:\Estudo\BankApplication\BankApplication.Domain\bin\Debug\netcoreapp2.2\BankApplication.Domain.pdb
-C:\Estudo\BankApplication\BankApplication.Domain\obj\Debug\netcoreapp2.2\BankApplication.Domain.AssemblyInfoInputs.cache
-C:\Estudo\BankApplication\BankApplication.Domain\obj\Debug\netcoreapp2.2\BankApplication.Domain.AssemblyInfo.cs
-C:\Estudo\BankApplication\BankApplication.Domain\obj\Debug\netcoreapp2.2\BankApplication.Domain.dll
-C:\Estudo\BankApplication\BankApplication.Domain\obj\Debug\netcoreapp2.2\BankApplication.Domain.pdb
-C:\Estudo\BankApplication\BankApplication.Domain\obj\Debug\netcoreapp2.2\BankApplication.Domain.csprojAssemblyReference.cache
