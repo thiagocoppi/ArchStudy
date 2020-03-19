@@ -1,7 +1,5 @@
-﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Domain.Associados;
+using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -9,13 +7,19 @@ namespace Application.Commands.Associado
 {
     public class CreateAssociadoCommandHandler : IRequestHandler<CreateAssociadoCommand, CreateAssociadoCommandResult>
     {
-        public Task<CreateAssociadoCommandResult> Handle(CreateAssociadoCommand request, CancellationToken cancellationToken)
+        private readonly IAssociadoService _associadoService;
+
+        public CreateAssociadoCommandHandler(IAssociadoService associadoService)
         {
-            return Task.FromResult(new CreateAssociadoCommandResult()
-            {
-                Id = Guid.NewGuid(),
-                Nome = "Associado"
-            });
+            _associadoService = associadoService;
+        }
+
+        public async Task<CreateAssociadoCommandResult> Handle(CreateAssociadoCommand request, CancellationToken cancellationToken)
+        {
+            var associadoCadastrado = await _associadoService.CadastrarAssociado(new Domain.Associados.Associado(request.Nome,
+                request.Idade, "07052429942", new Endereco("ABC", 0, string.Empty)));
+
+            return new CreateAssociadoCommandResult() { Nome = request.Nome };
         }
     }
 }

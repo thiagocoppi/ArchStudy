@@ -1,4 +1,6 @@
 using Application;
+using Domain;
+using Domain.Associados;
 using Infraestrutura;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -23,7 +25,11 @@ namespace ArchStudy
             services.AddControllers();
             services.AddSwaggerConfiguration();
             services.ConfigureMidiatR();
-            services.ConfigureFluentValidator();
+            services.ConfigureFluentValidatorApplication();
+            services.ConfigureFluentValidatorDomain();
+         
+            // Realiza o registro dos serviços com a interface demarcadora
+            services.RegisterAllTypes<IDomainService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -2,7 +2,7 @@
 
 namespace Domain
 {
-    public abstract class BaseEntity
+    public abstract class BaseEntity : ValidatorDomain
     {
         public Guid Id { get; set; }
     }

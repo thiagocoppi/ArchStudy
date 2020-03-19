@@ -1,4 +1,4 @@
-﻿using Domain.Associado;
+﻿using Domain.Associados;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

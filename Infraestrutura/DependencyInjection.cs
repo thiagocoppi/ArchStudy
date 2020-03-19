@@ -1,8 +1,6 @@
-﻿using MediatR;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using NSwag;
-using System.Reflection;
 
 namespace Infraestrutura
 {

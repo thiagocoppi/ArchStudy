@@ -14,7 +14,7 @@ namespace Application
             return services;
         }
 
-        public static IServiceCollection ConfigureFluentValidator(this IServiceCollection services)
+        public static IServiceCollection ConfigureFluentValidatorApplication(this IServiceCollection services)
         {
             services.AddMvc().AddFluentValidation(fv =>
             {
