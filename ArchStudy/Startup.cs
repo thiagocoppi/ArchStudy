@@ -1,6 +1,7 @@
 using Application;
+using ArchStudy.Filters;
 using Domain;
-using Domain.Associados;
+using Domain.Base;
 using Infraestrutura;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,9 +28,11 @@ namespace ArchStudy
             services.ConfigureMidiatR();
             services.ConfigureFluentValidatorApplication();
             services.ConfigureFluentValidatorDomain();
-         
+
             // Realiza o registro dos serviços com a interface demarcadora
             services.RegisterAllTypes<IDomainService>();
+
+            services.AddMvc(options => options.Filters.Add<NotificationFilter>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

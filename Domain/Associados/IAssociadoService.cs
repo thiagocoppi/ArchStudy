@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using Domain.Base;
+using System.Threading.Tasks;
 
 namespace Domain.Associados
 {

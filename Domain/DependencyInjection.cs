@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Domain.Base;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Linq;
 
@@ -8,16 +9,13 @@ namespace Domain
     {
         public static IServiceCollection ConfigureFluentValidatorDomain(this IServiceCollection services)
         {
-            //services.AddMvc().AddFluentValidation(fv =>
-            //{
-            //    fv.RegisterValidatorsFromAssemblyContaining<CreateAssociadoCommandValidator>();
-            //});
-
             return services;
         }
 
         public static void RegisterAllTypes<T>(this IServiceCollection services)
         {
+            services.AddScoped<INotificationContext, NotificationContext>();
+
             var typeInterface = typeof(T);
 
             AppDomain

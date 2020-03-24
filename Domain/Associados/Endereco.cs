@@ -1,4 +1,6 @@
-﻿namespace Domain.Associados
+﻿using Domain.Base;
+
+namespace Domain.Associados
 {
     public class Endereco : ValidatorDomain
     {
