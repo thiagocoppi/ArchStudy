@@ -2,7 +2,7 @@
 
 **As informações são meramentes ilustrativas**
 
-Esse repositório tem como principal foco o **aprendizado** e **aplicação** dos conceito para a arquitetura de sistemas. Como aplicação do notification pattern, mediator entre outros...
+Esse repositório tem como principal foco o **aprendizado** e **aplicação** dos conceito para a arquitetura de sistemas.
 
 ## Dependências do projeto
 Todas as dependencias do projetos encontram-se adicionadas do arquivo docker-compose.yml, para rodar basta uitilizar o comando
