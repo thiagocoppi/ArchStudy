@@ -17,7 +17,7 @@ namespace Domain.Associados
             //Validação genérica para exemplificação de adição de uma notificação de domínio, não externalizando uma exception.
             if (associado.Idade < 18)
             {
-                _notificationContext.AddNotification(new Notification("Erro notification", "Não foi possível cadastrar o associado"));
+                _notificationContext.AddNotification(new Notification("Associado menor de idade", "Não é possível cadastrar um associado menor de idade"));
             }
 
             return Task.FromResult(true);
