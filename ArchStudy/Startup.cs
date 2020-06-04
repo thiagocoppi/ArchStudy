@@ -11,7 +11,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace ArchStudy
 {
-    public class Startup
+    public abstract class Startup
     {
         public Startup(IConfiguration configuration)
         {
@@ -21,43 +21,39 @@ namespace ArchStudy
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddControllers();
-            services.AddSwaggerConfiguration();
-            services.ConfigureMidiatR();
-            services.ConfigureFluentValidatorApplication();
-            services.ConfigureFluentValidatorDomain();
+        public abstract void ConfigureServices(IServiceCollection services);
+            //services.AddControllers();
+            //services.AddSwaggerConfiguration();
+            //services.ConfigureMidiatR();
+            //services.ConfigureFluentValidatorApplication();
+            //services.ConfigureFluentValidatorDomain();
 
-            // Realiza o registro dos serviços com a interface demarcadora
-            services.RegisterAllTypes<IDomainService>();
-            services.RegisterAllStores<IStore>();
+            //// Realiza o registro dos serviços com a interface demarcadora
+            //services.RegisterAllTypes<IDomainService>();
+            //services.RegisterAllStores<IStore>();
 
-            services.AddSqlServerContext(Configuration);
+            //services.AddSqlServerContext(Configuration);
 
-            services.AddMvc(options => options.Filters.Add<NotificationFilter>());
-        }
+            //services.AddMvc(options => options.Filters.Add<NotificationFilter>());
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public abstract void Configure(IApplicationBuilder app, IWebHostEnvironment env);
+            //if (env.IsDevelopment())
+            //{
+            //    app.UseDeveloperExceptionPage();
+            //}
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
-            app.UseRouting();
+            //app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
-            app.ConfigureSwagger();
+            //app.ConfigureSwagger();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
-        }
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapControllers();
+            //});
     }
 }

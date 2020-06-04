@@ -22,7 +22,7 @@ namespace ArchStudy
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup<ArchStartup>();
                 })
                 .ConfigureAppConfiguration(configuration =>
                 {

@@ -10,7 +10,7 @@ namespace Tests.Base
         protected override IWebHostBuilder CreateWebHostBuilder()
         {
             return WebHost.CreateDefaultBuilder(null)
-                .UseStartup<Startup>();
+                .UseStartup<FakeStartup>();
         }
     }
 }
