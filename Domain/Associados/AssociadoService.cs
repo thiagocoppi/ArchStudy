@@ -21,6 +21,7 @@ namespace Domain.Associados
             if (associado.Idade < 18)
             {
                 _notificationContext.AddNotification(new Notification("Associado menor de idade", "Não é possível cadastrar um associado menor de idade"));
+                return null;
             }
 
             var associadoCadastrado = await _associadoStore.Save(associado);
