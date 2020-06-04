@@ -5,7 +5,6 @@ using Domain.Base;
 using Infraestrutura;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,12 +12,12 @@ namespace Tests.Base
 {
     public class FakeStartup : Startup
     {
-        public FakeStartup(IConfiguration Configuration): base (Configuration)
+        public FakeStartup(IConfiguration Configuration) : base(Configuration)
         {
         }
 
         public override void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {            
+        {
         }
 
         public override void ConfigureServices(IServiceCollection services)
@@ -27,8 +26,7 @@ namespace Tests.Base
             services.RegisterAllTypes<IDomainService>();
             services.RegisterAllStores<IStore>();
             services.AddScoped<IArchContext, ArchContext>();
-            services.AddDbContext<ArchContext>(opt => opt.UseInMemoryDatabase("Bank"));
-            
+
             services.AddMvc(options => options.Filters.Add<NotificationFilter>());
         }
     }
