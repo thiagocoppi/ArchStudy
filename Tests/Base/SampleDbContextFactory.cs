@@ -1,6 +1,7 @@
 ﻿using Infraestrutura;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using System;
 using System.Data.Common;
 
@@ -9,6 +10,7 @@ namespace Tests.Base
     public class SampleDbContextFactory : IDisposable
     {
         private DbConnection _connection;
+        private DbContext _context;
 
         private DbContextOptions<ArchContext> CreateOptions()
         {
@@ -24,9 +26,12 @@ namespace Tests.Base
                 _connection.Open();
 
                 var options = CreateOptions();
-                using (var context = new ArchContext(options))
+                var context = new ArchContext(options);
+                _context = context;
+                context.Database.EnsureCreated();
+                if (context.Database.GetPendingMigrations().Any())
                 {
-                    context.Database.EnsureCreated();
+                    context.Database.Migrate();
                 }
             }
 
@@ -37,6 +42,7 @@ namespace Tests.Base
         {
             if (_connection != null)
             {
+                _context.Database.EnsureDeleted();
                 _connection.Dispose();
                 _connection = null;
             }

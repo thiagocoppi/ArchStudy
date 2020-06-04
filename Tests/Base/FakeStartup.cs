@@ -5,6 +5,8 @@ using Domain.Base;
 using Infraestrutura;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Data.Sqlite;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -25,7 +27,16 @@ namespace Tests.Base
             // Realiza o registro dos serviços com a interface demarcadora
             services.RegisterAllTypes<IDomainService>();
             services.RegisterAllStores<IStore>();
-            services.AddScoped<IArchContext, ArchContext>();
+
+            services.AddDbContext<ArchContext>(options =>
+            {
+                options.UseSqlite(new SqliteConnection("DataSource=:memory:"));
+            });
+
+            // Build the service provider.
+            var sp = services.BuildServiceProvider();
+
+            services.AddScoped<IArchContext, ArchContext>(provider => provider.GetService<ArchContext>());
 
             services.AddMvc(options => options.Filters.Add<NotificationFilter>());
         }

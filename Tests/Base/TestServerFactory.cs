@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.Testing;
 
 namespace Tests.Base
 {
-    public class TestServerFactory : WebApplicationFactory<Startup>
+    public class TestServerFactory : WebApplicationFactory<FakeStartup>
     {
         protected override IWebHostBuilder CreateWebHostBuilder()
         {
