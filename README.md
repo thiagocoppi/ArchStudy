@@ -1,5 +1,7 @@
 # Repositório para estudos de padrões de projetos
 
+[![Build Status](https://travis-ci.org/thiagocoppi/ArchStudy.svg?branch=master)](https://travis-ci.org/thiagocoppi/ArchStudy)
+
 **As informações são meramentes ilustrativas**
 
 Esse repositório tem como principal foco o **aprendizado** e **aplicação** dos conceito para a arquitetura de sistemas.
