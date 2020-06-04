@@ -28,9 +28,7 @@ namespace Tests.Base
             services.RegisterAllStores<IStore>();
 
             services.AddDbContext<ArchContext>(opt => opt.UseInMemoryDatabase("Bank"));
-
-            services.AddSqlServerContext(Configuration);
-
+            
             services.AddMvc(options => options.Filters.Add<NotificationFilter>());
         }
     }
