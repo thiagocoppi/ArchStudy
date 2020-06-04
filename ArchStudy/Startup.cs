@@ -31,6 +31,9 @@ namespace ArchStudy
 
             // Realiza o registro dos serviços com a interface demarcadora
             services.RegisterAllTypes<IDomainService>();
+            services.RegisterAllStores<IStore>();
+
+            services.AddSqlServerContext(Configuration);
 
             services.AddMvc(options => options.Filters.Add<NotificationFilter>());
         }

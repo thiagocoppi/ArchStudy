@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Application.Commands.Associado
+namespace Application.Commands.Associados
 {
     public class CreateAssociadoCommand : IRequest<CreateAssociadoCommandResult>
     {

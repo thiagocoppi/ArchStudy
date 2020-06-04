@@ -1,4 +1,4 @@
-﻿using Application.Commands.Associado;
+﻿using Application.Commands.Associados;
 using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;

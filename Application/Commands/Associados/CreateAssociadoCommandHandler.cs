@@ -3,7 +3,7 @@ using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Application.Commands.Associado
+namespace Application.Commands.Associados
 {
     public class CreateAssociadoCommandHandler : IRequestHandler<CreateAssociadoCommand, CreateAssociadoCommandResult>
     {
@@ -16,10 +16,9 @@ namespace Application.Commands.Associado
 
         public async Task<CreateAssociadoCommandResult> Handle(CreateAssociadoCommand request, CancellationToken cancellationToken)
         {
-            var associadoCadastrado = await _associadoService.CadastrarAssociado(new Domain.Associados.Associado(request.Nome,
-                request.Idade, "07052429942", new Endereco("ABC", 0, string.Empty)));
+            var associadoCadastrado = await _associadoService.CadastrarAssociado(new Associado(request.Nome, request.Idade, "07052429942", new Endereco("Rua Ursa Maior", 454, "")));
 
-            return new CreateAssociadoCommandResult() { Nome = request.Nome };
+            return new CreateAssociadoCommandResult() { Nome = request.Nome, Id = associadoCadastrado.Id };
         }
     }
 }

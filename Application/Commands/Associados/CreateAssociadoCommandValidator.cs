@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace Application.Commands.Associado
+namespace Application.Commands.Associados
 {
     public class CreateAssociadoCommandValidator : AbstractValidator<CreateAssociadoCommand>
     {

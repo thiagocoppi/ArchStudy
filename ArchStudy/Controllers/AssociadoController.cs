@@ -1,4 +1,4 @@
-﻿using Application.Commands.Associado;
+﻿using Application.Commands.Associados;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;

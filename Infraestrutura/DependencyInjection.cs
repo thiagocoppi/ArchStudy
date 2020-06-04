@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NSwag;
+using System;
+using System.Linq;
 
 namespace Infraestrutura
 {
@@ -33,6 +37,40 @@ namespace Infraestrutura
             app.UseSwagger();
             app.UseSwaggerUi3();
             return app;
+        }
+
+        public static IServiceCollection AddSqlServerContext(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddEntityFrameworkSqlServer()
+            .AddDbContext<ArchContext>(options =>
+                options.UseSqlServer(
+                    configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<IArchContext>(provider => provider.GetService<ArchContext>());
+            return services;
+        }
+
+        public static void RegisterAllStores<T>(this IServiceCollection services)
+        {
+            var typeInterface = typeof(T);
+
+            AppDomain
+                .CurrentDomain
+                .GetAssemblies()
+                .SelectMany(r => r.GetTypes())
+                .Where(r => typeInterface.IsAssignableFrom(r))
+                .ToList()
+                .ForEach(types =>
+                {
+                    var interfacesServices = types.GetInterfaces().Where(r => r.Name != "IStore").ToList();
+                    if (interfacesServices.Count > 0)
+                    {
+                        foreach (var interfaceEach in interfacesServices)
+                        {
+                            services.AddScoped(interfaceEach, types);
+                        }
+                    }
+                });
         }
     }
 }

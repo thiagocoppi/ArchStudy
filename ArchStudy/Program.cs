@@ -13,10 +13,8 @@ namespace ArchStudy
     {
         public static void Main(string[] args)
         {
-            //configure logging first
             ConfigureLogging();
 
-            //then create the host, so that if the host fails we can log errors
             CreateHost(args);
         }
 
