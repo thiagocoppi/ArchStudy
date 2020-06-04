@@ -26,7 +26,7 @@ namespace Tests.Base
             // Realiza o registro dos serviços com a interface demarcadora
             services.RegisterAllTypes<IDomainService>();
             services.RegisterAllStores<IStore>();
-
+            services.AddScoped<IArchContext, ArchContext>();
             services.AddDbContext<ArchContext>(opt => opt.UseInMemoryDatabase("Bank"));
             
             services.AddMvc(options => options.Filters.Add<NotificationFilter>());
