@@ -20,7 +20,6 @@ namespace Tests.Associados
         {
             using (var scope = StartupTest().CreateScope())
             {
-                scope.ServiceProvider.GetService<ArchContext>().Database.Migrate();
                 var _associadoService = scope.ServiceProvider.GetService<IAssociadoService>();
                 var _notificationContext = scope.ServiceProvider.GetService<INotificationContext>();
                 _associadoService.CadastrarAssociado(
@@ -32,21 +31,22 @@ namespace Tests.Associados
         [Test]
         public void Dado_AssociadoMaiorIdade_NaoDeve_AdicionarNotificacaoDeErro()
         {
-            using (var factory = new SampleDbContextFactory())
+            using (var scope = StartupTest().CreateScope())
             {
-                // Get a context
-                using (var context = factory.CreateContext())
+                using (var factory = new SampleDbContextFactory())
                 {
-                    using (var scope = StartupTest().CreateScope())
+                    using (var context = factory.CreateContext())
                     {
-                        //var xpto = Substitute.For<IArchContext, ArchContext>(new DbContextOptionsBuilder<ArchContext>().UseSqlite(new SqliteConnection("DataSource=:memory:")).Options;);
+                        context.Database.OpenConnection();
+                        context.Database.Migrate();
+                        var _database = scope.ServiceProvider.GetRequiredService<ArchContext>();
+                        _database.Database.MigrateAsync().GetAwaiter().GetResult();
                         var _associadoService = scope.ServiceProvider.GetService<IAssociadoService>();
-                        var xpto = scope.ServiceProvider.GetRequiredService<IArchContext>();
-                        var xpto2 = scope.ServiceProvider.GetRequiredService<ArchContext>();
                         var _notificationContext = scope.ServiceProvider.GetService<INotificationContext>();
                         _associadoService.CadastrarAssociado(
                             new Associado("Thiago Coppi", 21, "07052429942", new Endereco("Rua tapajos", 74, ""))).GetAwaiter().GetResult();
                         Assert.IsFalse(_notificationContext.HaveNotification());
+                        context.Database.CloseConnection();
                     }
                 }
             }

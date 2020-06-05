@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infraestrutura.Migrations
 {
     [DbContext(typeof(ArchContext))]
-    [Migration("20200317164105_CriacaoEndereco")]
-    partial class CriacaoEndereco
+    [Migration("20200605122335_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace Infraestrutura.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Domain.Associado.Associado", b =>
+            modelBuilder.Entity("Domain.Associados.Associado", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -43,9 +43,9 @@ namespace Infraestrutura.Migrations
                     b.ToTable("Associados");
                 });
 
-            modelBuilder.Entity("Domain.Associado.Associado", b =>
+            modelBuilder.Entity("Domain.Associados.Associado", b =>
                 {
-                    b.OwnsOne("Domain.Associado.Endereco", "Endereco", b1 =>
+                    b.OwnsOne("Domain.Associados.Endereco", "Endereco", b1 =>
                         {
                             b1.Property<Guid>("AssociadoId")
                                 .HasColumnType("uniqueidentifier");

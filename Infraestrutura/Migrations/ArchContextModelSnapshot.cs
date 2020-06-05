@@ -19,7 +19,7 @@ namespace Infraestrutura.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Domain.Associado.Associado", b =>
+            modelBuilder.Entity("Domain.Associados.Associado", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -41,9 +41,9 @@ namespace Infraestrutura.Migrations
                     b.ToTable("Associados");
                 });
 
-            modelBuilder.Entity("Domain.Associado.Associado", b =>
+            modelBuilder.Entity("Domain.Associados.Associado", b =>
                 {
-                    b.OwnsOne("Domain.Associado.Endereco", "Endereco", b1 =>
+                    b.OwnsOne("Domain.Associados.Endereco", "Endereco", b1 =>
                         {
                             b1.Property<Guid>("AssociadoId")
                                 .HasColumnType("uniqueidentifier");

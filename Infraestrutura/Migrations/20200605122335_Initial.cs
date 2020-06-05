@@ -12,7 +12,12 @@ namespace Infraestrutura.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    Nome = table.Column<string>(nullable: true)
+                    CPF = table.Column<string>(nullable: false),
+                    Complemento = table.Column<string>(nullable: true),
+                    Logradouro = table.Column<string>(nullable: true),
+                    Numero = table.Column<int>(nullable: true, defaultValue: 0),
+                    Idade = table.Column<int>(nullable: false),
+                    Nome = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {

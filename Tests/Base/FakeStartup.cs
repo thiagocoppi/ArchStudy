@@ -9,6 +9,7 @@ using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace Tests.Base
 {
@@ -27,14 +28,10 @@ namespace Tests.Base
             // Realiza o registro dos serviços com a interface demarcadora
             services.RegisterAllTypes<IDomainService>();
             services.RegisterAllStores<IStore>();
-
-            services.AddDbContext<ArchContext>(options =>
+            services.AddEntityFrameworkSqlite().AddDbContext<ArchContext>(options =>
             {
-                options.UseSqlite(new SqliteConnection("DataSource=:memory:"));
+                options.UseSqlite(new SqliteConnection("Data Source=InMemorySample;Mode=Memory;Cache=Shared"));
             });
-
-            // Build the service provider.
-            var sp = services.BuildServiceProvider();
 
             services.AddScoped<IArchContext, ArchContext>(provider => provider.GetService<ArchContext>());
 
