@@ -20,7 +20,7 @@ Pode-se utilizar o curl para verificar se o kibana e elasticsearch estão no ar!
  - Kibana (Deve retornar um HTML)
   `curl http://localhost:5601 --location`
 
-Algumas partes foram utilziadas dos artigos relatados [Instalando Elasticsearch e Kibana](https://docs.swiftybeaver.com/article/33-install-elasticsearch-kibana-via-docker)
+Algumas partes foram utilizadas dos artigos relatados [Instalando Elasticsearch e Kibana](https://docs.swiftybeaver.com/article/33-install-elasticsearch-kibana-via-docker)
 
 Após realizar a instalação e subir a aplicação é necessário criar um index-pattern para que seja possível visualizar as requests no kibana, feito isso passará a ser possível visualizar as requests que foram disparadas para o método que há no controller
 ![Kibana messages](https://github.com/thiagocoppi/ArchStudy/blob/master/images/messages.jpg)
