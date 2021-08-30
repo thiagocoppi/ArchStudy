@@ -1,6 +1,5 @@
 # Repositório para estudos de padrões de projetos
-
-[![Build Status](https://travis-ci.org/thiagocoppi/ArchStudy.svg?branch=master)](https://travis-ci.org/thiagocoppi/ArchStudy)
+![Build Status](https://github.com/thiagocoppi/ArchStudy/actions/workflows/dotnet.yml/badge.svg)
 
 **As informações são meramentes ilustrativas**
 
