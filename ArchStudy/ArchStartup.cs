@@ -1,23 +1,19 @@
 ﻿using Application;
 using ArchStudy.Filters;
+using Autofac;
 using Domain;
-using Domain.Base;
 using Infraestrutura;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ArchStudy
 {
     public class ArchStartup : Startup
     {
-        public ArchStartup(IConfiguration configuration): base(configuration)
+        public ArchStartup(IConfiguration configuration) : base(configuration)
         {
         }
 
@@ -35,7 +31,7 @@ namespace ArchStudy
             app.UseAuthorization();
 
             app.ConfigureSwagger();
-
+            app.UseMiddleware<GlobalExceptionMiddleware>();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
@@ -50,13 +46,16 @@ namespace ArchStudy
             services.ConfigureFluentValidatorApplication();
             services.ConfigureFluentValidatorDomain();
 
-            // Realiza o registro dos serviços com a interface demarcadora
-            services.RegisterAllTypes<IDomainService>();
-            services.RegisterAllStores<IStore>();
-
             services.AddSqlServerContext(Configuration);
 
             services.AddMvc(options => options.Filters.Add<NotificationFilter>());
+        }
+
+        public void ConfigureContainer(ContainerBuilder Builder)
+        {
+            Builder.RegisterModule(new InfraestruturaModule());
+            Builder.RegisterModule(new DomainModule());
+            Builder.RegisterType(typeof(GlobalExceptionMiddleware));
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Associados
 {
-    public sealed class AssociadoService : IDomainService, IAssociadoService
+    public sealed class AssociadoService : IAssociadoService
     {
         private readonly INotificationContext _notificationContext;
         private readonly IAssociadoStore _associadoStore;

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Associados
 {
-    public interface IAssociadoStore : IStore
+    public interface IAssociadoStore
     {
         Task<Associado> Save(Associado associado);
 

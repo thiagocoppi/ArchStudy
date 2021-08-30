@@ -3,12 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NSwag;
-using System;
-using System.Linq;
 
 namespace Infraestrutura
 {
-    public static class DependencyInjection
+    public static class DocumentationConfiguration
     {
         public static IServiceCollection AddSwaggerConfiguration(this IServiceCollection services)
         {
@@ -33,7 +31,6 @@ namespace Infraestrutura
 
         public static IApplicationBuilder ConfigureSwagger(this IApplicationBuilder app)
         {
-            //add the Swagger generator and the Swagger UI middlewares
             app.UseSwagger();
             app.UseSwaggerUi3();
             return app;
@@ -48,29 +45,6 @@ namespace Infraestrutura
 
             services.AddScoped<IArchContext>(provider => provider.GetService<ArchContext>());
             return services;
-        }
-
-        public static void RegisterAllStores<T>(this IServiceCollection services)
-        {
-            var typeInterface = typeof(T);
-
-            AppDomain
-                .CurrentDomain
-                .GetAssemblies()
-                .SelectMany(r => r.GetTypes())
-                .Where(r => typeInterface.IsAssignableFrom(r))
-                .ToList()
-                .ForEach(types =>
-                {
-                    var interfacesServices = types.GetInterfaces().Where(r => r.Name != "IStore").ToList();
-                    if (interfacesServices.Count > 0)
-                    {
-                        foreach (var interfaceEach in interfacesServices)
-                        {
-                            services.AddScoped(interfaceEach, types);
-                        }
-                    }
-                });
         }
     }
 }

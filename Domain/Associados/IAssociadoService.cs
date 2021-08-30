@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Associados
 {
-    public interface IAssociadoService : IDomainService
+    public interface IAssociadoService
     {
         Task<Associado> CadastrarAssociado(Associado associado);
 

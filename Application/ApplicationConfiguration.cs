@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace Application
 {
-    public static class DependecyInjection
+    public static class ApplicationConfiguration
     {
         public static IServiceCollection ConfigureMidiatR(this IServiceCollection services)
         {
