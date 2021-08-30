@@ -12,9 +12,11 @@ namespace Infraestrutura
 
         public DbSet<Associado> Associados { get; set; }
 
-        public async Task SaveChangesAsync()
+        public Task SaveChangesAsync()
         {
-            await SaveChangesAsync();
+            SaveChanges();
+
+            return Task.CompletedTask;
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -14,6 +14,8 @@ namespace Tests.Base
 {
     public class FakeStartup : Startup
     {
+        public static IContainer ContainerBuilder;
+
         public FakeStartup(IConfiguration Configuration) : base(Configuration)
         {
         }

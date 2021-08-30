@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Domain.Associados;
+using Domain.Base;
 
 namespace Domain
 {
@@ -9,6 +10,7 @@ namespace Domain
         {
             base.Load(builder);
             builder.RegisterType<AssociadoService>().As<IAssociadoService>().InstancePerLifetimeScope();
+            builder.RegisterType<NotificationContext>().As<INotificationContext>().InstancePerLifetimeScope();
         }
     }
 }
